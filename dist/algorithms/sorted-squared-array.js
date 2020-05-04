@@ -1,3 +1,5 @@
+"use strict";
+
 /**
  * +++++++++++THE PROBLEM+++++++++++++:
  *
@@ -8,7 +10,16 @@
  *
  * eg: [-7, -3, -1, 4, 8, 12] -> [1, 9, 16, 49, 64, 144]
  *
- **/
+ */
+
+/**
+ * Method to square the numbers
+ * @param num
+ * @returns {number}
+ */
+function square(num) {
+    return num * num;
+}
 
 /**
  *
@@ -16,12 +27,12 @@
  * @returns {number[]}
  */
 function sortedSquaredArray(arr) {
-    if (arr.length == 0) {
+    if (arr.length === 0) {
         return [];
     }
-    let result = [];
-    let front = 0;
-    let back = arr.length - 1;
+    var result = [];
+    var front = 0;
+    var back = arr.length - 1;
 
     while (front <= back) {
         if (Math.abs(arr[front]) > Math.abs(arr[back])) {
@@ -35,16 +46,7 @@ function sortedSquaredArray(arr) {
     return result.reverse();
 }
 
-/**
- * Method to square the numbers
- * @param num
- * @returns {number}
- */
-function square(num) {
-    return num * num;
-}
+var arr = [-7, -3, -1, 4, 8, 12];
+// const arr1 = [-4, 1, 0, 3, 10];
 
-let arr = [-7, -3, -1, 4, 8, 12];
-let arr1 = [-4,-1,0,3,10];
-
-console.log(sortedSquaredArray(arr));
+sortedSquaredArray(arr);

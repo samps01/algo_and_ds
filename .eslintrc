@@ -1,0 +1,16 @@
+{
+  "root": true,
+  "extends": "airbnb-base",
+  "plugins": [],
+  "env": {
+  },
+  "rules": {
+    "indent": ["error", 4],
+    "no-bitwise": "off",
+    "no-lonely-if": "off",
+    "class-methods-use-this": "off",
+    "arrow-body-style": "off",
+    "no-loop-func": "off",
+    "no-plusplus": "off"
+  }
+}

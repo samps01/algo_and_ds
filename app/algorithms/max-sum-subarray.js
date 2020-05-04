@@ -1,13 +1,13 @@
 /**
  * Find max sum subarray from the given Array
  * Method 1 - Kadane's algorithm
- **/
+ */
 
 
-let arr = [5, 7, -3, 2, 9, 6, 16, 22, 21, 29, -14, 10, 12];
+const inputArr = [5, 7, -3, 2, 9, 6, 16, 22, 21, 29, -14, 10, 12];
 
-function maxSumSubArray(arr) {
-    if (arr.length == 0) {
+export default function maxSumSubArray(arr) {
+    if (arr.length === 0) {
         return null;
     }
 
@@ -21,10 +21,7 @@ function maxSumSubArray(arr) {
     return maxSum;
 }
 
-console.log(maxSumSubArray(arr));
+maxSumSubArray(inputArr);
 
-//TODO: Add method to return indices
-//TODO: Add test cases
-
-
-
+// TODO: Add method to return indices
+// TODO: Add test cases

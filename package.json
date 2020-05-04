@@ -1,0 +1,48 @@
+{
+  "name": "algorithm-and-data-structures-in-javascript",
+  "version": "1.0.0",
+  "description": "Javascript algorithms and data structures",
+  "main": "app.js",
+  "scripts": {
+    "lint": "eslint app/algorithms app/data-structure",
+    "lint-fix": "eslint app/algorithms app/data-structure --fix",
+    "test": "mocha app.test.js --require babel-core/register",
+    "cover": "nyc npm t",
+    "prebuild": "rimraf dist",
+    "build": "babel --copy-files --out-dir dist --ignore *.test.js app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samps01/algo_and_ds.git"
+  },
+  "keywords": [
+    "algorithms",
+    "data-structure",
+    "computer science"
+  ],
+  "author": "samson pallivathukkal https://github.com/samps01",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/samps01/algo_and_ds/issues"
+  },
+  "homepage": "https://github.com/samps01/algo_and_ds#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "chai": "^4.2.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "mocha": "^7.1.2",
+    "nyc": "^15.0.1",
+    "rimraf": "^3.0.2"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-2"
+    ]
+  }
+}
