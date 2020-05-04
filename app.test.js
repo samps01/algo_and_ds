@@ -1,5 +1,6 @@
 import  {assert, expect} from 'chai';
 import maxSumSubArray from "./app/algorithms/max-sum-subarray";
+import {squareOf, sortedSquaredArray} from "./app/algorithms/sorted-squared-array";
 
 
 describe('Algorithms', () => {
@@ -25,5 +26,26 @@ describe('Algorithms', () => {
                 assert.equal(result, inputObj.output);
             })
         })
+    });
+
+    describe('sorted-squared-array', () => {
+       const inputs = [
+           {
+               input: [-7, -3, -1, 4, 8, 12],
+               output: [1, 9, 16, 49, 64, 144]
+           }
+       ]
+
+       it(`Should return square of numbers`, () => {
+           const value = squareOf(2);
+           assert.equal(value, 4);
+       });
+
+       inputs.forEach(inputObj => {
+           it(`should return sorted squared array of ${inputObj.output}`, () => {
+               const result = sortedSquaredArray(inputObj.input);
+               expect(result).to.eql(inputObj.output);
+           })
+       })
     });
 });

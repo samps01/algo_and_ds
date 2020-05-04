@@ -15,7 +15,7 @@
  * @param num
  * @returns {number}
  */
-function square(num) {
+export function squareOf(num) {
     return num * num;
 }
 
@@ -24,7 +24,7 @@ function square(num) {
  * @param {number[]}
  * @returns {number[]}
  */
-function sortedSquaredArray(arr) {
+export function sortedSquaredArray(arr) {
     if (arr.length === 0) {
         return [];
     }
@@ -34,10 +34,10 @@ function sortedSquaredArray(arr) {
 
     while (front <= back) {
         if (Math.abs(arr[front]) > Math.abs(arr[back])) {
-            result.push(square(arr[front]));
+            result.push(squareOf(arr[front]));
             front++;
         } else {
-            result.push(square(arr[back]));
+            result.push(squareOf(arr[back]));
             back--;
         }
     }
