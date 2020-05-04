@@ -31,7 +31,7 @@ export default function minimumWindowSubstring(s, t) {
             charSeen[t[i]] = 0; // initialize with 0, increment based on occurrence of the char in S
 
             // missingCharCount should be for unique char only,
-            // hence incrementing once for one unique char
+            // hence incrementing once for each unique char
             // eg "AA" -> missingCharCount will be 1
             // eg "ABC -> missingCharCount will be 3
             missingCharCount++;
@@ -43,7 +43,7 @@ export default function minimumWindowSubstring(s, t) {
         if ({}.hasOwnProperty.call(charNeeded, value)) {
             charSeen[value]++;
 
-            // Should be equal to the total occurrence of that char in T
+            // Should be equal to the total occurrence of that char in T,
             // to deduct missingCharCount
             if (charSeen[value] === charNeeded[value]) {
                 missingCharCount--;
