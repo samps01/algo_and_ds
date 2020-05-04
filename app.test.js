@@ -1,6 +1,9 @@
-import  {assert, expect} from 'chai';
+import {describe} from "mocha";
+
+const {assert, expect}  = require('chai');
 import maxSumSubArray from "./app/algorithms/max-sum-subarray";
 import {squareOf, sortedSquaredArray} from "./app/algorithms/sorted-squared-array";
+import minimumWindowSubstring from "./app/algorithms/minimum-window-substring";
 
 
 describe('Algorithms', () => {
@@ -21,7 +24,7 @@ describe('Algorithms', () => {
         ]
 
         inputs.forEach(inputObj => {
-            it(`Should be equal to ${inputObj.output}`, () => {
+            it(`Should be equal to ${inputObj.output} for ${inputObj.input}`, () => {
                 const result = maxSumSubArray(inputObj.input);
                 assert.equal(result, inputObj.output);
             })
@@ -42,10 +45,35 @@ describe('Algorithms', () => {
        });
 
        inputs.forEach(inputObj => {
-           it(`should return sorted squared array of ${inputObj.output}`, () => {
+           it(`should return sorted squared array of ${inputObj.output} for ${inputObj.input}`, () => {
                const result = sortedSquaredArray(inputObj.input);
                expect(result).to.eql(inputObj.output);
            })
        })
     });
+
+    describe('minimumWindowSubstring', () => {
+        const inputs = [
+            {
+                input: ["ADOBECODEBBAANCC", "ABC"],
+                output: "BAANC"
+
+            },
+            {
+                input: ["AA", "AA"],
+                output: "AA"
+            },
+            {
+                input: ['Samson', 'XYZ'],
+                output: ""
+            }
+        ]
+
+        inputs.forEach(inputObj => {
+            it(`Should return ${inputObj.output ? inputObj.output : "Empty string"} for ${inputObj.input}`, () => {
+                const result = minimumWindowSubstring(...inputObj.input)
+                expect(result).to.be.equal(inputObj.output);
+            })
+        })
+    })
 });
