@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint app/algorithms app/data-structure",
     "lint-fix": "eslint app/algorithms app/data-structure --fix",
-    "test": "mocha app.test.js --require babel-core/register",
+    "test": "mocha app/**/*test.js --require babel-core/register",
     "cover": "nyc npm t",
     "prebuild": "rimraf dist",
     "build": "babel --copy-files --out-dir dist --ignore *.test.js app"
@@ -44,5 +44,6 @@
       "es2015",
       "stage-2"
     ]
-  }
+  },
+  "eslintIgnore": ["*.test.js"]
 }
