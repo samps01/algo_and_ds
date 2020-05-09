@@ -27,6 +27,8 @@
 
 export default class BSTIterator {
     constructor(tree) {
+        // will always be space O(h) h-> height of the tree;
+        // since we are tracing left nodes of the root node at a given instance;
         this.itemStack = [];
         this._traceLeft(tree.root);
     }
