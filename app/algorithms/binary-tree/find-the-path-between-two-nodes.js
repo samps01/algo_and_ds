@@ -7,28 +7,6 @@
 
 import { BinarySearchTree } from '../../data-structure/binary-search-tree';
 
-/**
- *
- * @param {number} val1
- * @param {number} val2
- * @return {number}
- */
-function findPathBetweenTwoNodes(val1, val2, root) {
-    let result = 0;
-    const visitedNodes = [];
-    try {
-        if (typeof val1 === 'number' && typeof val2 === 'number') {
-            result = findSingleNodePathFromRoot(root, val1, result, visitedNodes);
-            result = findSingleNodePathFromRoot(root, val2, result, visitedNodes);
-        } else {
-            throw new Error('Please insert a valid Node value');
-        }
-    } catch (e) {
-        console.error(e);
-    }
-    console.log(result);
-    return result;
-}
 
 /**
  *
@@ -60,7 +38,28 @@ function findSingleNodePathFromRoot(root, val, steps, visitedNodesArray) {
     return steps;
 }
 
-
+/**
+ *
+ * @param {number} val1
+ * @param {number} val2
+ * @return {number}
+ */
+function findPathBetweenTwoNodes(val1, val2, root) {
+    let result = 0;
+    const visitedNodes = [];
+    try {
+        if (typeof val1 === 'number' && typeof val2 === 'number') {
+            result = findSingleNodePathFromRoot(root, val1, result, visitedNodes);
+            result = findSingleNodePathFromRoot(root, val2, result, visitedNodes);
+        } else {
+            throw new Error('Please insert a valid Node value');
+        }
+    } catch (e) {
+        console.error(e);
+    }
+    console.log(result);
+    return result;
+}
 const arr = [10, 5, 15, 2, 18];
 
 const bst = new BinarySearchTree();

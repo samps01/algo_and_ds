@@ -12,6 +12,7 @@
     "arrow-body-style": "off",
     "no-loop-func": "off",
     "no-plusplus": "off",
-    "no-param-reassign": ["warn", { "props": true }]
+    "no-param-reassign": ["warn", { "props": false }],
+    "no-underscore-dangle": ["warn"]
   }
 }
