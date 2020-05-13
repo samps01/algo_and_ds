@@ -1,7 +1,8 @@
 import { describe } from 'mocha';
 
-import { BinarySearchTree } from "../../../data-structure/binary-search-tree";
+import { BinarySearchTree, Node } from "../../../data-structure/binary-search-tree";
 import BSTIterator from "../binary-search-tree-iterator";
+import inorderTraversalIterative from "../binary-tree-inorder-traversal";
 
 const { assert, expect } = require('chai');
 
@@ -24,5 +25,20 @@ describe('Binary Tree', () => {
          inputs.input.forEach(methodName => outputArr.push(bstIterator[methodName]()));
          expect(outputArr).to.eql(inputs.output);
      });
+   });
+
+   describe('Inorder traversal  iterative', () => {
+       const root = new Node(1);
+       root.right = new Node(2);
+       root.right.left = new Node(3);
+
+       const output = [1, 3, 2];
+
+       it(`Should return ${output} for [1, null, 2, 3]`, () => {
+          const result = inorderTraversalIterative(root);
+          expect(result).to.eql(output);
+       });
+
+
    });
 });
