@@ -2,7 +2,7 @@ import { describe } from 'mocha';
 
 import { BinarySearchTree, Node } from "../../../data-structure/binary-search-tree";
 import BSTIterator from "../binary-search-tree-iterator";
-import inorderTraversalIterative from "../binary-tree-inorder-traversal";
+import inorderTraversalIterative from "../inorder-successor-in-bst";
 
 const { assert, expect } = require('chai');
 
