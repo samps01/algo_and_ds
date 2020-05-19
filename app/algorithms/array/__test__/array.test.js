@@ -2,6 +2,7 @@ import { describe } from 'mocha';
 import { sortedSquaredArray, squareOf } from '../sorted-squared-array';
 import maxSumSubArray from '../max-sum-subarray';
 import removeDuplicates from "../remove-duplicates-from-sorted-array";
+import missingElement from "../missing-element-in-sorted-array";
 
 const { assert, expect } = require('chai');
 
@@ -80,5 +81,32 @@ describe('Arrays', () => {
               expect(resultArr).to.eql(inputObj.output.modArr);
            });
        })
+    });
+
+    describe('Missing element in sorted array', () => {
+       const inputs = [
+           {
+               inputArr: [4, 7, 9, 10],
+               inputK: 1,
+               output: 5
+           },
+           {
+               inputArr: [4, 7, 9, 10],
+               inputK: 3,
+               output: 8
+           },
+           {
+               inputArr: [1, 2, 4],
+               inputK: 3,
+               output: 6
+           }
+       ]
+
+        inputs.forEach(inputObj => {
+            it(`Should return ${inputObj.output} for array ${inputObj.inputArr} and k = ${inputObj.inputK}`, () => {
+               const result = missingElement(inputObj.inputArr, inputObj.inputK);
+               assert.equal(result, inputObj.output);
+            });
+        })
     });
 });
