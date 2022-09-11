@@ -80,16 +80,3 @@ class LinkedList {
         return element;
     }
 }
-
-let ll = new LinkedList();
-
-["Sam", "Ben", "Sam", "Christy"].forEach(name => ll.append(name));
-
-ll.prepend("USA");
-
-ll.prepend("India");
-
-ll.delete("Christy");
-
-console.log(ll.toArray());
-console.log(ll.tail);
