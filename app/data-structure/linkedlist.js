@@ -40,6 +40,11 @@ class LinkedList {
     }
 
 
+    /**
+     * Delete a node in the Linkedlist
+     * @param {*} value 
+     * @returns 
+     */
     delete(value) {
         if (this.head) {
             if (this.head.data === value) {
@@ -62,6 +67,39 @@ class LinkedList {
 
         }
         return;
+    }
+
+    /**
+     * Find the element in Linkedlist if present 
+     * @param {*} value 
+     * @returns 
+     */
+    find(value) {
+        if (this.head) {
+            let current = this.head;
+
+            while (current) {
+                if (current.data === value) {
+                    return current;
+                }
+                current = current.next;
+            }
+        }
+        return;
+    }
+
+    /**
+     * Insert new node after the specified node
+     * @param {*} value 
+     * @param {*} afterValue 
+     */
+    insertAfter(value, afterValue) {
+        let node = this.find(afterValue);
+        let newNode = new Node(value);
+        if (node) {
+            newNode.next = node.next;
+            node.next = newNode;
+        }
     }
 
     /**
